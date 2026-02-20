@@ -1,0 +1,39 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - events
+  verbs:
+  - create
+  - patch
+- apiGroups:
+  - com.salaboy.salaboy.com
+  resources:
+  - chats
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - com.salaboy.salaboy.com
+  resources:
+  - chats/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - com.salaboy.salaboy.com
+  resources:
+  - chats/status
+  verbs:
+  - get
+  - patch
+  - update

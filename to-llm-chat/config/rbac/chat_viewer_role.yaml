@@ -1,0 +1,29 @@
+# This rule is not used by the project to-llm-chat itself.
+# It is provided to allow the cluster admin to help manage permissions for users.
+#
+# Grants read-only access to com.salaboy.salaboy.com resources.
+# This role is intended for users who need visibility into these resources
+# without permissions to modify them. It is ideal for monitoring purposes and limited-access viewing.
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: to-llm-chat
+    app.kubernetes.io/managed-by: kustomize
+  name: chat-viewer-role
+rules:
+- apiGroups:
+  - com.salaboy.salaboy.com
+  resources:
+  - chats
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - com.salaboy.salaboy.com
+  resources:
+  - chats/status
+  verbs:
+  - get

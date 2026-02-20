@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- com.salaboy_v1_chat.yaml
+# +kubebuilder:scaffold:manifestskustomizesamples

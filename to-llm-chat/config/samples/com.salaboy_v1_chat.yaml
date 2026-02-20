@@ -1,0 +1,9 @@
+apiVersion: com.salaboy.salaboy.com/v1
+kind: Chat
+metadata:
+  labels:
+    app.kubernetes.io/name: to-llm-chat
+    app.kubernetes.io/managed-by: kustomize
+  name: chat-sample
+spec:
+  question: "What am I doing here?"
